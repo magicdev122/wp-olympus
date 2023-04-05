@@ -1,0 +1,85 @@
+{
+  "name": "getolympus/olympus",
+  "type": "project",
+  "description": "The Olympus framework, your simple, easy to use and powerfull framework to deploy and work with WordPress. An awesome framework build with ♥ for WordPress developers.",
+  "keywords": ["olympus", "wordpress", "framework", "php", "capistrano", "composer"],
+  "homepage": "https://github.com/GetOlympus/Olympus",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Achraf Chouk",
+      "email": "achrafchouk@gmail.com",
+      "homepage": "https://github.com/crewstyle"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Olympus\\Components\\Autoloader\\": "app/components/Autoloader/",
+      "Olympus\\Components\\Error\\": "app/components/Error/",
+      "Olympus\\Components\\Handler\\": "app/components/Handler/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    },
+    "installer-paths":{
+      "web/statics/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "wp-api/wp-api"
+      ],
+      "web/statics/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/statics/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "web/cms"
+  },
+  "minimum-stability": "stable",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "composer/composer": "^2.1",
+    "getolympus/olympus-zeus-core": "^2.1",
+    "getolympus/olympus-hades-error-handler": "^0.0.5",
+    "johnpbloch/wordpress": "^6.0",
+    "wpackagist-theme/twentytwentytwo": "^1.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*",
+    "wikimedia/less.php": "^3.1"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Olympus\\Components\\Handler\\Configurator::build",
+      "if [ ! -L web/xmlrpc.php ]; then ln -s cms/xmlrpc.php web/xmlrpc.php; fi"
+    ],
+    "post-update-cmd": [
+      "Olympus\\Components\\Handler\\Configurator::build",
+      "if [ ! -L web/xmlrpc.php ]; then ln -s cms/xmlrpc.php web/xmlrpc.php; fi",
+      "find ./app/cache ! -name '.gitkeep' -type f -exec rm -f {} +",
+      "find ./web/resources/dist ! -name '.gitkeep' -type f -exec rm -f {} +"
+    ],
+    "clean": [
+      "find ./app/cache ! -name '.gitkeep' -type f -exec rm -f {} +",
+      "find ./web/resources/dist ! -name '.gitkeep' -type f -exec rm -f {} +"
+    ],
+    "test": [
+      "vendor/bin/phpcs --standard=phpcs.xml ."
+    ]
+  }
+}

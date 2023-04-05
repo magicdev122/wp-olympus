@@ -1,0 +1,93 @@
+##############################################
+# @package olympus
+# @author Achraf Chouk <achrafchouk@gmail.com>
+# @since 0.0.3
+##############################################
+
+# Composer
+vendor/
+composer.lock
+
+# Capistrano
+.bundle
+
+# Useless auto-generated files
+.DS_Store
+.idea/
+Thumbs.db
+
+# Capistrano dist files
+/app/deploy/*
+!/app/deploy/config.rb.dist
+/app/deploy/stages/*
+!/app/deploy/stages/production.rb.dist
+!/app/deploy/stages/staging.rb.dist
+
+# Olympus dist files
+/app/config/*
+!/app/config/env.php.dist
+!/app/config/opts.php.dist
+!/app/config/own.php.dist
+!/app/config/salt.php.dist
+/app/cache/*
+!/app/cache/.gitkeep
+/app/logs/*
+!/app/logs/.gitkeep
+
+# Olympus auto-generated files
+/web/.htaccess
+/web/robots.txt
+/web/xmlrpc.php
+
+# Olympus packages assets
+/web/resources/*
+!/web/resources/dist
+!/web/resources/whoops
+/web/resources/dist/css/*
+!/web/resources/dist/css/.gitkeep
+/web/resources/dist/fonts/*
+!/web/resources/dist/fonts/.gitkeep
+/web/resources/dist/img/*
+!/web/resources/dist/img/.gitkeep
+/web/resources/dist/js/*
+!/web/resources/dist/js/.gitkeep
+
+# WordPress core
+/web/cms/*
+!/web/cms/.gitkeep
+
+# WordPress debug file
+/web/statics/debug.log
+
+# WordPress cache
+/web/statics/cache/*
+!/web/statics/cache/.gitkeep
+
+# WordPress languages
+/web/statics/languages/*
+!/web/statics/languages/.gitkeep
+!/web/statics/languages/index.php
+
+# WordPress must use plugins
+/web/statics/mu-plugins/*
+!/web/statics/mu-plugins/.gitkeep
+!/web/statics/mu-plugins/autoload.php
+!/web/statics/mu-plugins/index.php
+
+# WordPress plugins
+/web/statics/plugins/*
+!/web/statics/plugins/.gitkeep
+!/web/statics/plugins/index.php
+
+# WordPress themes
+/web/statics/themes/*
+!/web/statics/themes/.gitkeep
+!/web/statics/themes/index.php
+
+# WordPress upgrade
+/web/statics/upgrade/
+
+# WordPress uploads
+/web/statics/uploads/*
+!/web/statics/uploads/.gitkeep
+!/web/statics/uploads/index.php

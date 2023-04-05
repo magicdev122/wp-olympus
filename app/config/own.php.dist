@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Own user constants defined here.
+ * 
+ * @category PHP
+ * @package  Olympus
+ * @author   Achraf Chouk <achrafchouk@gmail.com>
+ * @license  https://github.com/GetOlympus/Olympus/blob/master/LICENSE MIT
+ * @link     https://github.com/GetOlympus/Olympus
+ * @since    0.0.8
+ */
+
+/**
+ * Simple example to use with a WordPress multisite, with subdomain configuration:
+ */
+// define('MULTISITE', true);
+// define('SUBDOMAIN_INSTALL', true);
+// define('DOMAIN_CURRENT_SITE', 'domain.tld');
+// define('PATH_CURRENT_SITE', '/');
+// define('SITE_ID_CURRENT_SITE', 1);
+// define('BLOG_ID_CURRENT_SITE', 1);

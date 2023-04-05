@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Olympus">
+    <description>Olympus framework coding standard in PSR2.</description>
+
+    <exclude-pattern>.git/*</exclude-pattern>
+    <exclude-pattern>app/cache/*</exclude-pattern>
+    <exclude-pattern>app/config/*.php</exclude-pattern>
+    <exclude-pattern>vendor/*</exclude-pattern>
+    <exclude-pattern>web/cms/*</exclude-pattern>
+    <exclude-pattern>web/resources/*</exclude-pattern>
+    <exclude-pattern>web/statics/languages/*</exclude-pattern>
+    <exclude-pattern>web/statics/mu-plugins/**/*</exclude-pattern>
+    <exclude-pattern>web/statics/plugins/*</exclude-pattern>
+    <exclude-pattern>web/statics/themes/*</exclude-pattern>
+    <exclude-pattern>web/statics/uploads/*</exclude-pattern>
+    <exclude-pattern>web/xmlrpc.php</exclude-pattern>
+
+    <arg name="report-width" value="auto"/>
+    <arg value="-colors"/>
+    <arg value="np"/>
+
+    <rule ref="PSR2"/>
+</ruleset>

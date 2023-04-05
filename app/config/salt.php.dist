@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Uniq keys and salts defined here.
+ * 
+ * @category PHP
+ * @package  Olympus
+ * @author   Achraf Chouk <achrafchouk@gmail.com>
+ * @license  https://github.com/GetOlympus/Olympus/blob/master/LICENSE MIT
+ * @link     https://github.com/GetOlympus/Olympus
+ * @since    0.0.2
+ */
+
+/**
+ * Authentication unique keys and salts.
+ * @see https://api.wordpress.org/secret-key/1.1/salt/
+ * and copy/paste the lines here.
+ *
+ * Note that if you DO NOT generate your own salt keys, the Capistrano Olympus will ;)
+ * But the file is necessary to make the Olympus framework works properly.
+ */
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');

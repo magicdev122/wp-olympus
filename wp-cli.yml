@@ -1,0 +1,4 @@
+# WP-Cli configuration file
+# @see http://wp-cli.org/config/
+
+path: web/cms

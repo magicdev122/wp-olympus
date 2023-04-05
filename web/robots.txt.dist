@@ -1,0 +1,7 @@
+Sitemap: https://www.domain.tld/sitemap.xml
+
+User-agent: *
+Disallow: /*?
+Disallow: /cms/
+Disallow: /statics/
+Allow: /statics/uploads/

@@ -1,0 +1,127 @@
+<?php
+
+/**
+ * Optional WordPress constants defined here.
+ * 
+ * @category PHP
+ * @package  Olympus
+ * @author   Achraf Chouk <achrafchouk@gmail.com>
+ * @license  https://github.com/GetOlympus/Olympus/blob/master/LICENSE MIT
+ * @link     https://github.com/GetOlympus/Olympus
+ * @since    0.0.2
+ */
+
+/**
+ * Site environment options.
+ */
+return [
+    // Configuration options
+    // ~
+    // See all default options in the `/app/environments/configuration.php` file
+    // It sets memory limit, some security and features options
+    // ~
+    'configuration' => [
+        // Set memory limit
+        'wp_memory_limit'      => '128M',
+        'wp_max_memory_limit'  => '256M',
+        // Autosave interval in seconds
+        'autosave_interval'    => 60,
+        // Cron lock timeout in seconds
+        'wp_cron_lock_timeout' => 60,
+        // Trash feature for media
+        'media_trash'          => true,
+        // Allow users to update core, themes or plugins
+        'disallow_file_mods'   => false,
+        // Allow editing images to replace the originals
+        'image_edit_overwrite' => false,
+        // Enforce GZIP encoding
+        'enforce_gzip'         => false,
+        // FS method
+        'fs_method'            => false,
+        'fs_chmod_dir'         => 493,
+        'fs_chmod_file'        => 420,
+        // Temp directory ~ We recommand to leave this empty
+        'wp_temp_dir'          => WEBPATH.STATICSDIR.S,
+    ],
+
+    // Cookies options
+    // ~
+    // See all default options in the `/app/environments/cookies.php` file
+    // It sets all cookies names
+    // ~
+    'cookies' => [
+        // Default
+        'cookiehash'           => md5('https://www.domain.tld/cms/'),
+        // Auth                => md5('olympus').'u_'.md5('https://www.domain.tld/cms/'),
+        'user_cookie'          => '341e76dcd74b690d08b26b51bce88813u_9829f1ed04a267596cd30501b815ad7f',
+        'pass_cookie'          => '341e76dcd74b690d08b26b51bce88813p_9829f1ed04a267596cd30501b815ad7f',
+        'auth_cookie'          => '341e76dcd74b690d08b26b51bce88813a_9829f1ed04a267596cd30501b815ad7f',
+        'secure_auth_cookie'   => '341e76dcd74b690d08b26b51bce88813s_9829f1ed04a267596cd30501b815ad7f',
+        'logged_in_cookie'     => '341e76dcd74b690d08b26b51bce88813l_9829f1ed04a267596cd30501b815ad7f',
+        'recovery_mode_cookie' => '341e76dcd74b690d08b26b51bce88813r_9829f1ed04a267596cd30501b815ad7f',
+        // Paths
+        'cookiepath'           => 'www.domain.tld',
+        'sitecookiepath'       => 'www.domain.tld/cms/',
+        'admin_cookie_path'    => 'www.domain.tld/cms/wp-admin/',
+        'plugins_cookie_path'  => 'www.domain.tld/statics/plugins/',
+        // Domain
+        'cookie_domain'        => false,
+        // Testing or trying...
+        'test_cookie'          => '341e76dcd74b690d08b26b51bce88813is_trying',
+    ],
+
+    // Debug options
+    // ~
+    // See all default options in the `/app/environments/debug.php` file
+    // It sets all debug options
+    // ~
+    'debug' => [
+        // Scripts and CSS debug
+        'concatenate_scripts' => false,
+        'compress_scripts'    => false,
+        'compress_css'        => false,
+        // Turn off WSOD Protection and don't send email notification
+        'wp_sandbox_scraping' => true,
+        // Special Olympus error level
+        'error_level'         => 200,
+    ],
+
+    // Multisite options
+    // ~
+    // See all default options in the `/app/environments/multisite.php` file
+    // In multisite case, it sets default current site definitions
+    // ~
+    'multisite' => [
+        'subdomain_install'    => true,
+        // Website
+        'domain_current_site'  => 'www.domain.tld',
+        'path_current_site'    => '/cms/',
+        // Identifier
+        'site_id_current_site' => 1,
+        'blog_id_current_site' => 1,
+    ],
+
+    // Website options
+    // ~
+    // See all default options in the `/app/environments/website.php` file
+    // It sets all statics folder names
+    // ~
+    'website' => [
+        // Global
+        'wp_content_dir'  => '/path/to/web_docroot/statics/',
+        'wp_content_url'  => 'https://www.domain.tld/statics/',
+        'contentdir'      => '../statics',
+        // Mu plugins
+        'wpmu_plugin_dir' => '/path/to/web_docroot/statics/mu-plugins/',
+        'wpmu_plugin_url' => 'https://www.domain.tld/statics/mu-plugins/',
+        'muplugindir'     => '../statics/mu-plugins',
+        // Plugins
+        'wp_plugin_dir'   => '/path/to/web_docroot/statics/plugins/',
+        'wp_plugin_url'   => 'https://www.domain.tld/statics/plugins/',
+        'plugindir'       => '../statics/plugins',
+        // Themes
+        'wp_theme_dir'    => '/path/to/web_docroot/statics/themes/',
+        'wp_theme_url'    => 'https://www.domain.tld/statics/themes/',
+        'themedir'        => '../statics/themes',
+    ],
+];
